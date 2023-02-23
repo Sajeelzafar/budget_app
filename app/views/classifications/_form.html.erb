@@ -1,4 +1,4 @@
-<%= form_with(model: classification) do |form| %>
+<%= form_with(model: classification) do |f| %>
   <% if classification.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(classification.errors.count, "error") %> prohibited this classification from being saved:</h2>
@@ -10,8 +10,16 @@
       </ul>
     </div>
   <% end %>
+  <div class="homePageButtonBox">
+    <div class="topThreeFields">
+      <div class="field">
+        <%= f.text_field :name, autofocus: true, placeholder: "Name", class: "loginField", autocomplete: "off" %>
+      </div>
 
-  <div>
-    <%= form.submit %>
+      <div class="field">
+        <%= f.text_field :icon, autofocus: true, placeholder: "Icon (Image Link)", class: "loginField", autocomplete: "off" %>
+      </div>
+    </div>
   </div>
+  <%= f.submit "Create Classification", class: "homePageButtonBlue" %>
 <% end %>

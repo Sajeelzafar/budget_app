@@ -3,7 +3,7 @@ class ClassificationsController < ApplicationController
 
   # GET /classifications or /classifications.json
   def index
-    @classifications = Classification.all
+    @classifications = Classification.where(author: current_user)
   end
 
   # GET /classifications/1 or /classifications/1.json

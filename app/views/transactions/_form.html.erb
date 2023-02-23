@@ -1,4 +1,4 @@
-<%= form_with(model: transaction) do |form| %>
+<%= form_with(model: transaction) do |f| %>
   <% if transaction.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
@@ -10,8 +10,18 @@
       </ul>
     </div>
   <% end %>
+  <div class="homePageButtonBox">
+  <div class="topThreeFields">
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, placeholder: "Name", class: "loginField", autocomplete: "off" %>
+    </div>
 
+    <div class="field">
+      <%= f.number_field :amount, autofocus: true, placeholder: "Amount (in USD)", class: "loginField", autocomplete: "off" %>
+    </div>
+  </div>
+</div>
   <div>
-    <%= form.submit %>
+    <%= f.submit "Create Transaction", class: "homePageButtonBlue" %>
   </div>
 <% end %>

@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Proxima Nova Light';
+    src: url('path/to/proxima-nova-light.woff2') format('woff2'),
+         url('path/to/proxima-nova-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+  
+.leftIcon {
+    color: white;
+}
+
+.classification_nav {
+    color: white;
+    background-color: #3778c2;
+    font-family: 'Proxima Nova Light', sans-serif;
+}
