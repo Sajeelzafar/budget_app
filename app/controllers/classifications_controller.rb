@@ -21,15 +21,14 @@ class ClassificationsController < ApplicationController
 
   # POST /classifications or /classifications.json
   def create
-    @classification = Classification.new(classification_params)
+    @new_classification = classification_params;
+    @classification = Classification.new(name: @new_classification[:name], icon: @new_classification[:icon], author: current_user)
 
     respond_to do |format|
       if @classification.save
         format.html { redirect_to classification_url(@classification), notice: "Classification was successfully created." }
-        format.json { render :show, status: :created, location: @classification }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @classification.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,6 +64,6 @@ class ClassificationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def classification_params
-      params.fetch(:classification, {})
+      params.require(:classification).permit(:name, :icon, :author)
     end
 end

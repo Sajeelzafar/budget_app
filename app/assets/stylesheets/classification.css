@@ -5,13 +5,123 @@
     font-weight: 300;
     font-style: normal;
 }
-  
+
+@font-face {
+	font-family: 'proxima_nova_rgregular';
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proxima_nova_rgbold';
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+	src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+		 url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .leftIcon {
     color: white;
+}
+
+#classifications {
+    padding-top: 2rem;
+    background-color: rgb(241, 243, 242);
+}
+
+#classifications a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .classification_nav {
     color: white;
     background-color: #3778c2;
     font-family: 'Proxima Nova Light', sans-serif;
+}
+
+.sign_out {
+    background-color: #3778c2;
+    color: white;
+    margin-top: 1rem;
+    border: 1px solid white;
+}
+
+.classificationBox {
+    padding-left: 0.5rem;
+    display: grid;
+    background-color: white;
+    width: 90%;
+    align-items: center;
+    margin-bottom: 2rem;
+    grid-template-columns: 1fr 3fr;
+    border: 1px solid rgb(241, 243, 242);
+}
+
+.classificationIcon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.classificationDesc {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.classificationRightBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.classificationRightBox hr {
+    width: 95%;
+    color: black;
+}
+
+.classificationPrice {
+    font-family: 'proxima_nova_rgbold', sans-serif;
+    color: black;
+}
+
+.classificationName {
+    font-family: 'proxima_nova_rgregular', sans-serif;
+    color: rgb(182, 182, 182);
+}
+
+.classificationDateBox {
+    font-family: 'proxima_nova_rgregular', sans-serif;
+    color: rgb(182, 182, 182);
+    width: 90%;
+}
+
+.newClassificationButton {
+    background-color: #3778c2;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    margin-top: 2rem;
+}
+
+.newClassificationButtonText {
+    color: white;
+    text-decoration: none;
 }

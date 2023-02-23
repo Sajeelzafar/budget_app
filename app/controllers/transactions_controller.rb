@@ -21,7 +21,8 @@ class TransactionsController < ApplicationController
 
   # POST /transactions or /transactions.json
   def create
-    @transaction = Transaction.new(transaction_params)
+    @new_transaction = transaction_params;
+    @transaction = Transaction.new(name: @new_transaction[:name], icon: @new_transaction[:amount], author: current_user)
 
     respond_to do |format|
       if @transaction.save
@@ -65,6 +66,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transaction_params
-      params.fetch(:transaction, {})
+      params.require(:classification).permit(:name, :amount, :author)
     end
 end
