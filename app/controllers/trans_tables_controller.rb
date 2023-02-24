@@ -1,9 +1,9 @@
-class TransactionsController < ApplicationController
+class TransTablesController < ApplicationController
   before_action :set_transaction, only: %i[ show edit update destroy ]
 
   # GET /transactions or /transactions.json
   def index
-    @transactions = Transaction.all
+    @transactions = TransTable.all
   end
 
   # GET /transactions/1 or /transactions/1.json
@@ -12,7 +12,9 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
-    @transaction = Transaction.new
+    @transaction = TransTable.new
+    @classification_id = params[:classification_id]
+    @classifications = Classification.where(author: current_user)
   end
 
   # GET /transactions/1/edit
@@ -22,7 +24,7 @@ class TransactionsController < ApplicationController
   # POST /transactions or /transactions.json
   def create
     @new_transaction = transaction_params;
-    @transaction = Transaction.new(name: @new_transaction[:name], icon: @new_transaction[:amount], author: current_user)
+    @transaction = TransTable.new(name: @new_transaction[:name], icon: @new_transaction[:amount], author: current_user)
 
     respond_to do |format|
       if @transaction.save
@@ -66,6 +68,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transaction_params
-      params.require(:classification).permit(:name, :amount, :author)
+      params.require(:classification).permit(:name, :amount, :author, :classification_id)
     end
 end

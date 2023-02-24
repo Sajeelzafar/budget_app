@@ -1,12 +1,4 @@
 @font-face {
-    font-family: 'Proxima Nova Light';
-    src: url('path/to/proxima-nova-light.woff2') format('woff2'),
-         url('path/to/proxima-nova-light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
 	font-family: 'proxima_nova_rgregular';
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
 	src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),

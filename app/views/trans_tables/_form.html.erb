@@ -19,6 +19,11 @@
     <div class="field">
       <%= f.number_field :amount, autofocus: true, placeholder: "Amount (in USD)", class: "loginField", autocomplete: "off" %>
     </div>
+
+    <div class="form-group" style="margin-bottom: 20px;">
+      <%= f.label "Select Categories: " %>
+      <%= f.collection_select :classification_id, @classifications, :id, :name %>
+    </div>
   </div>
 </div>
   <div>
