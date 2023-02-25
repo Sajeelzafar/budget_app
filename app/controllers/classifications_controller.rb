@@ -8,7 +8,9 @@ class ClassificationsController < ApplicationController
 
   # GET /classifications/1 or /classifications/1.json
   def show
-    @transactions = TransTable.all
+    @classification = Classification.find(params[:id])
+    @class_trans = ClassTran.where(classification_id: @classification.id)
+    
   end
 
   # GET /classifications/new

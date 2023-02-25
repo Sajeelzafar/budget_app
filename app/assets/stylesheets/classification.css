@@ -52,15 +52,24 @@
     border: 1px solid white;
 }
 
-.classificationBox {
+.classificationBox, .transactionBox {
     padding-left: 0.5rem;
-    display: grid;
     background-color: white;
     width: 90%;
     align-items: center;
     margin-bottom: 2rem;
-    grid-template-columns: 1fr 3fr;
     border: 1px solid rgb(241, 243, 242);
+}
+
+.classificationBox {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.transactionBox {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .classificationIcon img {
@@ -84,7 +93,7 @@
     align-items: center;
 }
 
-.classificationRightBox hr {
+.classificationRightBox hr, .transactionBox hr {
     width: 95%;
     color: black;
 }
@@ -116,4 +125,10 @@
 .newClassificationButtonText {
     color: white;
     text-decoration: none;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white;
+    font-family: 'proxima_nova_rgregular', sans-serif;
 }
