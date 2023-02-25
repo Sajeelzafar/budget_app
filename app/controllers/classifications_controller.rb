@@ -29,7 +29,7 @@ class ClassificationsController < ApplicationController
     respond_to do |format|
       if @classification.save
         format.html do
-          redirect_to classification_url(@classification), notice: 'Classification was successfully created.'
+          redirect_to classifications_url, notice: 'Classification was successfully created.'
         end
       else
         format.html { render :new, status: :unprocessable_entity }
