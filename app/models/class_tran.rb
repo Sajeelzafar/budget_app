@@ -1,4 +1,4 @@
 class ClassTran < ApplicationRecord
     belongs_to :classification
-    belongs_to :transaction 
+    belongs_to :trans_table 
 end

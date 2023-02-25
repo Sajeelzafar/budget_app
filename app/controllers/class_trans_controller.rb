@@ -65,6 +65,6 @@ class ClassTransController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def class_tran_params
-      params.fetch(:class_tran, {})
+      params.require(:class_trans).permit(:classification_id, :trans_table_id)
     end
 end

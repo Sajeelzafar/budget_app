@@ -25,7 +25,7 @@
 <div id="classifications">
   <% @classifications.each do |classification| %>
     <%= render classification %>
-    <a href="/classifications/<%= classification.id %>/trans_tables">
+    <a href="/classifications/<%= classification.id %>">
       <div class="classificationBox">
         <div class="classificationIcon">
           <img src="<%= classification.icon %>" alt="Classification image" />

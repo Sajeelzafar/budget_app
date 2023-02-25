@@ -15,6 +15,7 @@ class TransTablesController < ApplicationController
     @transaction = TransTable.new
     @classification_id = params[:classification_id]
     @classifications = Classification.where(author: current_user)
+    @class_tran = ClassTran.new
   end
 
   # GET /transactions/1/edit
@@ -24,15 +25,16 @@ class TransTablesController < ApplicationController
   # POST /transactions or /transactions.json
   def create
     @new_transaction = transaction_params;
-    @transaction = TransTable.new(name: @new_transaction[:name], icon: @new_transaction[:amount], author: current_user)
+    @transaction = TransTable.new(name: @new_transaction[:name], amount: @new_transaction[:amount], author: current_user)
+    @classification = Classification.find(@new_transaction[:classification_id])
+    @class_tran = ClassTran.new(classification: @classification, trans_table: @transaction)
 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to transaction_url(@transaction), notice: "Transaction was successfully created." }
-        format.json { render :show, status: :created, location: @transaction }
+        @class_tran.save
+        format.html { redirect_to classification_path(@new_transaction[:classification_id]), notice: "Transaction was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -68,6 +70,6 @@ class TransTablesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transaction_params
-      params.require(:classification).permit(:name, :amount, :author, :classification_id)
+      params.require(:trans_table).permit(:name, :amount, :author, :classification_id)
     end
 end

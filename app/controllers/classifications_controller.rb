@@ -8,6 +8,7 @@ class ClassificationsController < ApplicationController
 
   # GET /classifications/1 or /classifications/1.json
   def show
+    @transactions = TransTable.all
   end
 
   # GET /classifications/new
