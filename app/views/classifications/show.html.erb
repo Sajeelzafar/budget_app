@@ -26,12 +26,17 @@
 </nav>
 
 <div id="classifications">
-  <% @class_trans.each do |transaction| %>
+  <div class="classificationTotalBox">
+    <h4 class="classificationTotal">Total Amount</h4>
+    <h4 class="classificationTotal">$ <%= @classification.total_amount %></h4>
+  </div>
+  <% @class_trans.order(created_at: :desc).each do |transaction| %>
     <a href="#">
       <div class="transactionBox">
         <div class="classificationDesc">
           <h2 class="classificationName"><%= transaction.trans_table.name %></h2>
           <h4 class="classificationPrice">$ <%= transaction.trans_table.amount %></h4>
+          
         </div>
         <hr>
         <div class="classificationDateBox">

@@ -137,3 +137,16 @@
   color: white;
   text-decoration: none;
 }
+
+.classificationTotalBox {
+  background-color: #3778c2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.classificationTotal {
+  color: white;
+}
