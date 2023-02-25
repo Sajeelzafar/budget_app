@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag 'home_page' %>
+
+<div class="loginPage">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home_pages">
+        <i class="fa fa-arrow-left leftIcon" aria-hidden="true"></i>
+      </a>
+      <h2 class="loginPageHeading">REGISTER</h2>
+      <span>Next</span>
+    </div>
+  </nav>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="homePageButtonBox">
+    <div class="topThreeFields">
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.text_field :name, autofocus: true, placeholder: "Name", class: "loginField", autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.text_field :photo, autofocus: true, placeholder: "Photo", class: "loginField", autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "loginField", autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, placeholder: "Password #{'(' + @minimum_password_length.to_s + ' characters minimum)' if @minimum_password_length.present?}", class: "loginField", autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, placeholder: "Re-Enter Password", class: "loginField", autocomplete: "off" %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", class: "homePageButtonBlue" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
