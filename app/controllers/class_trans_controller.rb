@@ -1,5 +1,5 @@
 class ClassTransController < ApplicationController
-  before_action :set_class_tran, only: %i[ show edit update destroy ]
+  before_action :set_class_tran, only: %i[show edit update destroy]
 
   # GET /class_trans or /class_trans.json
   def index
@@ -7,8 +7,7 @@ class ClassTransController < ApplicationController
   end
 
   # GET /class_trans/1 or /class_trans/1.json
-  def show
-  end
+  def show; end
 
   # GET /class_trans/new
   def new
@@ -16,8 +15,7 @@ class ClassTransController < ApplicationController
   end
 
   # GET /class_trans/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /class_trans or /class_trans.json
   def create
@@ -25,7 +23,7 @@ class ClassTransController < ApplicationController
 
     respond_to do |format|
       if @class_tran.save
-        format.html { redirect_to class_tran_url(@class_tran), notice: "Class tran was successfully created." }
+        format.html { redirect_to class_tran_url(@class_tran), notice: 'Class tran was successfully created.' }
         format.json { render :show, status: :created, location: @class_tran }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class ClassTransController < ApplicationController
   def update
     respond_to do |format|
       if @class_tran.update(class_tran_params)
-        format.html { redirect_to class_tran_url(@class_tran), notice: "Class tran was successfully updated." }
+        format.html { redirect_to class_tran_url(@class_tran), notice: 'Class tran was successfully updated.' }
         format.json { render :show, status: :ok, location: @class_tran }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class ClassTransController < ApplicationController
     @class_tran.destroy
 
     respond_to do |format|
-      format.html { redirect_to class_trans_url, notice: "Class tran was successfully destroyed." }
+      format.html { redirect_to class_trans_url, notice: 'Class tran was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_class_tran
-      @class_tran = ClassTran.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def class_tran_params
-      params.require(:class_trans).permit(:classification_id, :trans_table_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_class_tran
+    @class_tran = ClassTran.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def class_tran_params
+    params.require(:class_trans).permit(:classification_id, :trans_table_id)
+  end
 end

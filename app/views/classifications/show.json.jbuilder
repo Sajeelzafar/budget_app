@@ -1,1 +1,1 @@
-json.partial! "classifications/classification", classification: @classification
+json.partial! 'classifications/classification', classification: @classification
