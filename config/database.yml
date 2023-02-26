@@ -89,5 +89,5 @@ production:
   <<: *default
   database: budget_app_production
   server: localhost
-  username: sajeel
-  password: abcd123
+  username: sajeeldatabase
+  password: YRVXmffjS17Pd7m3B1LdRoHeX04TSVqg
