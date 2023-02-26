@@ -25,8 +25,8 @@ development:
   <<: *default
   database: budget_app_development
   server: localhost
-  username: sajeeldatabase
-  password: YRVXmffjS17Pd7m3B1LdRoHeX04TSVqg 
+  username: sajeel
+  password: abcd123
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,8 +62,8 @@ test:
   <<: *default
   database: budget_app_test
   server: localhost
-  username: sajeeldatabase
-  password: YRVXmffjS17Pd7m3B1LdRoHeX04TSVqg
+  username: sajeel
+  password: abcd123
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -89,5 +89,5 @@ production:
   <<: *default
   database: budget_app_production
   server: localhost
-  username: sajeeldatabase
-  password: YRVXmffjS17Pd7m3B1LdRoHeX04TSVqg
+  username: sajeel
+  password: abcd123
