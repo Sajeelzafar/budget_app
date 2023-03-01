@@ -41,7 +41,7 @@
 
 ## Live Demo 
 
-- [Live Demo Link](https://sajeel-budget-app1.onrender.com/)
+- [Live Demo Link](https://sajeel-budget-app.onrender.com/)
 
 ## Getting Started 
 
