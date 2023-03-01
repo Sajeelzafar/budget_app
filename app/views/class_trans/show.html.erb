@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @class_tran %>
+
+<div>
+  <%= link_to "Edit this class tran", edit_class_tran_path(@class_tran) %> |
+  <%= link_to "Back to class trans", class_trans_path %>
+
+  <%= button_to "Destroy this class tran", @class_tran, method: :delete %>
+</div>

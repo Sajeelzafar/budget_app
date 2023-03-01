@@ -1,0 +1,52 @@
+<p style="color: green"><%= notice %></p>
+
+<%= stylesheet_link_tag 'classification' %>
+<%= stylesheet_link_tag 'home_page' %>
+
+<nav class="navbar navbar-expand-md navbar-dark classification_nav">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="/classifications">Classification</a>
+      </li>
+      <li class="nav-item">
+        <% if user_signed_in? %>
+        <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'sign_out', data: { turbo: false } %>
+        <% else %>
+        <%= link_to 'Sign In', new_user_session_path, class: 'nav-link'%>
+        <% end%>
+      </li>
+    </ul>
+  </div>
+  <a class="navbar-brand" href="#">TRANSACTIONS</a>
+  <i class="fa fa-search search_icon" aria-hidden="true"></i> 
+</nav>
+
+<div id="classifications">
+  <div class="classificationTotalBox">
+    <h4 class="classificationTotal">Total Amount</h4>
+    <h4 class="classificationTotal">$ <%= @classification.total_amount %></h4>
+  </div>
+  <% @class_trans.order(created_at: :desc).each do |transaction| %>
+    <a href="#">
+      <div class="transactionBox">
+        <div class="classificationDesc">
+          <h2 class="classificationName"><%= transaction.trans_table.name %></h2>
+          <h4 class="classificationPrice">$ <%= transaction.trans_table.amount %></h4>
+          
+        </div>
+        <hr>
+        <div class="classificationDateBox">
+          <span><%= transaction.created_at.to_date %></span>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>
+
+<button class="newClassificationButton"><%= link_to "New transaction", new_trans_table_path, class: "newClassificationButtonText" %></button>
+
+

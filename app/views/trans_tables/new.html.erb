@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag 'classification' %>
+<%= stylesheet_link_tag 'home_page' %>
+
+<nav class="navbar classification_nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/classifications">
+      <i class="fa fa-arrow-left leftIcon" aria-hidden="true"></i>
+    </a>
+    <h2 class="loginPageHeading">New Transaction</h2>
+  </div>
+</nav>
+
+<%= render "form", transaction: @transaction %>
+
